@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Substring02 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String first = scanner.nextLine();
+        String text = scanner.nextLine();
+
+        int index = text.indexOf(first);
+
+
+        while (index != -1){
+            text = text.substring(0,index)
+                    + text.substring(index +first.length());
+            index = text.indexOf(first);
+        }
+        System.out.println(text);
+    }
+}
