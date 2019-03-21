@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class RepeatStrings01 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String[] words = scanner.nextLine().split("\\s+");
+
+        String fin = "";
+        for (int i = 0; i < words.length; i++) {
+            int size =words[i].length();
+            for (int j = 0; j < size; j++) {
+                fin += words[i];
+            }
+        }
+        System.out.println(fin);
+    }
+}
