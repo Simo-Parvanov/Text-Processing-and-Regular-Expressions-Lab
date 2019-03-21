@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class TextFilter04 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String[] forbiddenWords = scanner.nextLine().split(", ");
+        String text = scanner.nextLine();
+
+        StringBuilder replaced = new StringBuilder();
+        for (int i = 0; i < forbiddenWords.length; i++) {
+            for (int j = 0; j < forbiddenWords[i].length(); j++) {
+                replaced.append("*");
+            }
+            text = text.replaceAll(forbiddenWords[i], replaced.toString());
+            replaced = new StringBuilder();
+        }
+        System.out.println(text);
+    }
+}
