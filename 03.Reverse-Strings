@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class ReverseStrings03 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String word = scanner.nextLine();
+
+        while (!word.equals("end")){
+            StringBuilder sb = new StringBuilder(word);
+            sb.reverse();
+            System.out.println(String.format("%s = %s",word,sb));
+            word = scanner.nextLine();
+        }
+    }
+}
