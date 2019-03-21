@@ -1,0 +1,23 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class MatchNumbers09 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String list = scanner.nextLine();
+        String match = "(^|(?<=\\s))-?\\d+(\\.\\d+)?($|(?=\\s))";
+        Pattern pattern = Pattern.compile(match);
+        Matcher matcher = pattern.matcher(list);
+
+        List<String> matchElement = new ArrayList<>();
+        while (matcher.find()){
+            matchElement.add(matcher.group());
+        }
+        System.out.println(String.join(" ",matchElement));
+
+    }
+
+}
